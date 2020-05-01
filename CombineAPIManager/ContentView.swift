@@ -6,11 +6,19 @@
 //  Copyright © 2020 Emelagudev. All rights reserved.
 //
 
-import SwiftUI
+import SwiftUI 
 
 struct ContentView: View {
+    @ObservedObject var presenter = SamplePresenter()
+    
     var body: some View {
-        Text("Hello, World!")
+        VStack {
+            Text("\(presenter.employees.count)")
+            ForEach(presenter.employees) { employee in
+                Text(employee.employee_name)
+            }
+        }.onAppear(perform: presenter.mec)
+        
     }
 }
 
