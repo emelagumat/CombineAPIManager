@@ -1,6 +1,6 @@
 import Foundation
 
-extension Service: ServerRequest {
+extension Service {
     
     // MARK: - Base URL
     var baseURL: String {
